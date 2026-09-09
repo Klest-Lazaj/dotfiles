@@ -1,0 +1,13 @@
+.DS_Store
+*.log
+*.tmp
+
+# Local-only/private machine state
+.env
+.env.*
+!.env.example
+
+# Build outputs
+config/sketchybar/helper/helper
+legacy/sketchybar_backup/helpers/menus/bin/
+legacy/sketchybar_backup/helpers/event_providers/*/bin/

@@ -1,0 +1,45 @@
+#!/usr/bin/env sh
+
+sudo yabai --load-sa
+yabai -m signal --add event=dock_did_restart action="sudo yabai --load-sa"
+
+# Layout
+yabai -m config layout bsp
+yabai -m config window_placement second_child
+yabai -m config auto_balance off
+
+# Performance
+yabai -m config window_animation_duration 0.0
+
+# Gaps & padding
+yabai -m config top_padding 5
+yabai -m config bottom_padding 35
+yabai -m config left_padding 10
+yabai -m config right_padding 10
+yabai -m config window_gap 15
+
+# Mouse support
+yabai -m config mouse_modifier fn
+yabai -m config mouse_action1 move
+yabai -m config mouse_action2 resize
+
+# Opacity — only used to enable the feature, no global dimming
+yabai -m config window_opacity on
+yabai -m config active_window_opacity 1.0
+yabai -m config normal_window_opacity 1.0
+
+# Keep Code, Zed, Ghostty, IntelliJ IDEA, and Finder transparent at all times regardless of focus
+yabai -m signal --remove code_ghostty_zed_opacity_focused 2>/dev/null
+yabai -m signal --remove code_ghostty_zed_opacity_created 2>/dev/null
+yabai -m signal --remove reset_non_dev_opacity_focused 2>/dev/null
+yabai -m signal --add event=window_focused label=code_ghostty_zed_opacity_focused app="^(Code|Ghostty|Zed|IntelliJ IDEA|Finder)$" action='
+  yabai -m window $YABAI_WINDOW_ID --opacity 0.9
+'
+yabai -m signal --add event=window_created label=code_ghostty_zed_opacity_created app="^(Code|Ghostty|Zed|IntelliJ IDEA|Finder)$" action='
+  yabai -m window $YABAI_WINDOW_ID --opacity 0.9
+'
+yabai -m signal --add event=window_focused label=reset_non_dev_opacity_focused app!="^(Code|Ghostty|Zed|IntelliJ IDEA|Finder)$" action='
+  yabai -m window $YABAI_WINDOW_ID --opacity 0.0
+'
+
+echo "yabai loaded"

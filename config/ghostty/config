@@ -1,0 +1,24 @@
+# Font — matches your iTerm2 profile
+font-family = MesloLGS NF
+font-size = 18
+
+# Theme
+theme = github-dark
+
+background-opacity = 0.90
+
+# Window — no title bar, clean for yabai tiling
+# window-decoration = false
+
+# Shell
+shell-integration = zsh
+
+# No confirmation when closing
+confirm-close-surface = false
+
+# Cursor
+cursor-style = bar
+cursor-style-blink = false
+
+# For using fzf alt + c
+macos-option-as-alt = true
