@@ -25,6 +25,18 @@ For linking only, without installing packages:
 ./link.sh
 ```
 
+To enable automatic local commits whenever tracked dotfiles change:
+
+```sh
+./scripts/install-autocommit.sh
+```
+
+The auto-commit service commits locally only. Push manually when you want GitHub updated:
+
+```sh
+git push
+```
+
 ## Included
 
 - `home/.zshrc`
