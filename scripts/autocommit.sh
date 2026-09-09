@@ -19,7 +19,7 @@ sleep 2
 cd "$REPO_DIR"
 
 if ! git diff --quiet || [ -n "$(git status --short)" ]; then
-  git add home config Brewfile README.md install.sh link.sh scripts launchd .gitignore
+  git add home config Brewfile README.md install.sh link.sh scripts .gitignore
 
   if git diff --cached --quiet; then
     exit 0

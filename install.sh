@@ -124,6 +124,7 @@ main() {
   setup_homebrew_shellenv
   install_tooling
   link_dotfiles
+  "$DOTFILES_DIR/scripts/install-autocommit.sh"
   start_services
 
   log "Done. Existing files, if any, were moved to $BACKUP_DIR"

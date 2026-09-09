@@ -25,6 +25,11 @@ cat > "$PLIST_PATH" <<PLIST
     <string>$DOTFILES_DIR/home</string>
     <string>$DOTFILES_DIR/config</string>
     <string>$DOTFILES_DIR/Brewfile</string>
+    <string>$DOTFILES_DIR/install.sh</string>
+    <string>$DOTFILES_DIR/link.sh</string>
+    <string>$DOTFILES_DIR/README.md</string>
+    <string>$DOTFILES_DIR/.gitignore</string>
+    <string>$DOTFILES_DIR/scripts</string>
   </array>
   <key>StandardOutPath</key>
   <string>$DOTFILES_DIR/logs/autocommit.out.log</string>
