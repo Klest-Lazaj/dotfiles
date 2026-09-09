@@ -58,7 +58,6 @@ brew "unar"
 brew "yabai"
 brew "zoxide"
 
-cask "aerospace"
 cask "android-platform-tools"
 cask "font-jetbrains-mono-nerd-font"
 cask "ghostty"

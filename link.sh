@@ -31,7 +31,6 @@ backup_and_link "$DOTFILES_DIR/config/yabai" "$HOME/.config/yabai"
 backup_and_link "$DOTFILES_DIR/config/sketchybar" "$HOME/.config/sketchybar"
 backup_and_link "$DOTFILES_DIR/config/borders" "$HOME/.config/borders"
 backup_and_link "$DOTFILES_DIR/config/ghostty" "$HOME/.config/ghostty"
-backup_and_link "$DOTFILES_DIR/config/aerospace" "$HOME/.config/aerospace"
 backup_and_link "$DOTFILES_DIR/config/btop" "$HOME/.config/btop"
 backup_and_link "$DOTFILES_DIR/config/starship.toml" "$HOME/.config/starship.toml"
 

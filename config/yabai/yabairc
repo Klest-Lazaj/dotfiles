@@ -28,6 +28,15 @@ yabai -m config window_opacity on
 yabai -m config active_window_opacity 1.0
 yabai -m config normal_window_opacity 1.0
 
+# Float all apps by default
+yabai -m rule --add app=".*" manage=off
+
+# Specific rules
+yabai -m rule --add app="^Code$" manage=on
+yabai -m rule --add app="^Ghostty$" manage=on
+yabai -m rule --add app="^Zed$" manage=on
+yabai -m rule --add app="^(Terminal|Finder|IntelliJ IDEA|WhatsApp|Slack|Telegram|Arc|Zen|Google|Safari|Firefox)$" manage=on
+
 # Keep Code, Zed, Ghostty, IntelliJ IDEA, and Finder transparent at all times regardless of focus
 yabai -m signal --remove code_ghostty_zed_opacity_focused 2>/dev/null
 yabai -m signal --remove code_ghostty_zed_opacity_created 2>/dev/null

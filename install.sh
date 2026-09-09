@@ -106,7 +106,6 @@ link_dotfiles() {
   backup_and_link "$DOTFILES_DIR/config/sketchybar" "$HOME/.config/sketchybar"
   backup_and_link "$DOTFILES_DIR/config/borders" "$HOME/.config/borders"
   backup_and_link "$DOTFILES_DIR/config/ghostty" "$HOME/.config/ghostty"
-  backup_and_link "$DOTFILES_DIR/config/aerospace" "$HOME/.config/aerospace"
   backup_and_link "$DOTFILES_DIR/config/btop" "$HOME/.config/btop"
   backup_and_link "$DOTFILES_DIR/config/starship.toml" "$HOME/.config/starship.toml"
 }
@@ -124,7 +123,6 @@ main() {
   setup_homebrew_shellenv
   install_tooling
   link_dotfiles
-  "$DOTFILES_DIR/scripts/install-autocommit.sh"
   start_services
 
   log "Done. Existing files, if any, were moved to $BACKUP_DIR"

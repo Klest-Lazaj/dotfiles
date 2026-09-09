@@ -1,6 +1,6 @@
 # Klest's Dotfiles
 
-Personal macOS dotfiles for zsh, skhd, yabai, sketchybar, borders, Ghostty, Starship, btop, and AeroSpace.
+Personal macOS dotfiles for zsh, skhd, yabai, sketchybar, borders, Ghostty, Starship, btop.
 
 ## New Mac Setup
 
@@ -25,18 +25,6 @@ For linking only, without installing packages:
 ./link.sh
 ```
 
-To enable automatic local commits whenever tracked dotfiles change:
-
-```sh
-./scripts/install-autocommit.sh
-```
-
-The auto-commit service commits locally only. Push manually when you want GitHub updated:
-
-```sh
-git push
-```
-
 ## Included
 
 - `home/.zshrc`
@@ -49,7 +37,6 @@ git push
 - `config/ghostty`
 - `config/starship.toml`
 - `config/btop`
-- `config/aerospace`
 - `legacy/sketchybar_backup`
 
 ## Notes
