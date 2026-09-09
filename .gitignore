@@ -10,5 +10,3 @@ logs/
 
 # Build outputs
 config/sketchybar/helper/helper
-legacy/sketchybar_backup/helpers/menus/bin/
-legacy/sketchybar_backup/helpers/event_providers/*/bin/

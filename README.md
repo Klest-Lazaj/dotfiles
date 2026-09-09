@@ -37,7 +37,6 @@ For linking only, without installing packages:
 - `config/ghostty`
 - `config/starship.toml`
 - `config/btop`
-- `legacy/sketchybar_backup`
 
 ## Notes
 
