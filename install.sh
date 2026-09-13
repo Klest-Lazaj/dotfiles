@@ -110,6 +110,11 @@ link_dotfiles() {
   backup_and_link "$DOTFILES_DIR/config/starship.toml" "$HOME/.config/starship.toml"
 }
 
+configure_macos() {
+  log "Applying macOS defaults"
+  "$DOTFILES_DIR/macos-defaults.sh"
+}
+
 start_services() {
   log "Starting services"
   yabai --start-service || true
@@ -123,6 +128,7 @@ main() {
   setup_homebrew_shellenv
   install_tooling
   link_dotfiles
+  configure_macos
   start_services
 
   log "Done. Existing files, if any, were moved to $BACKUP_DIR"

@@ -71,8 +71,8 @@ shift + ralt - p : yabai -m window --space prev && yabai -m space --focus prev
 shift + ralt - n : yabai -m window --space next && yabai -m space --focus next
 
 # Create / destroy spaces
-rcmd + ralt - n : current=$(yabai -m query --spaces --space | jq -r '.index') && target=$((current + 1)) && yabai -m space --create && new=$(yabai -m query --spaces | jq -r 'map(.index) | max') && { yabai -m space --focus "$new" 2>/dev/null || [ "$(yabai -m query --spaces --space | jq -r '.index')" = "$new" ]; } && { [ "$new" = "$target" ] || yabai -m space --move "$target"; } && sleep 0.05 && { yabai -m space --focus "$target" 2>/dev/null || [ "$(yabai -m query --spaces --space | jq -r '.index')" = "$target" ]; }; sketchybar --trigger space_windows_change
-rcmd + ralt - r : index=$(yabai -m query --spaces --space | jq -r '.index') && target=$((index > 1 ? index - 1 : 1)) && yabai -m space --destroy && yabai -m space --focus "$target"; sketchybar --trigger space_windows_change
+rcmd + ralt - n : "$HOME/.config/yabai/create-space-right.sh"
+rcmd + ralt - r : index=$(yabai -m query --spaces --space | jq -r '.index') && target=$((index > 1 ? index - 1 : 1)) && yabai -m space --destroy && yabai -m space --focus "$target"
 
 # OPEN APPS
 ralt - return : osascript -e 'tell application "Ghostty" to «event GhstNWin»' || open -a Ghostty

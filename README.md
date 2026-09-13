@@ -16,6 +16,7 @@ The installer:
 - installs packages from `Brewfile`
 - installs zinit, nvm, SDKMAN, latest Node LTS, and Homebrew OpenJDK
 - symlinks configs into `$HOME`
+- applies low-animation macOS defaults
 - backs up existing files to `~/.dotfiles-backup/<timestamp>`
 - starts yabai, skhd, sketchybar, and borders
 
@@ -25,12 +26,19 @@ For linking only, without installing packages:
 ./link.sh
 ```
 
+To apply only the macOS animation defaults on an existing machine:
+
+```sh
+./macos-defaults.sh
+```
+
 ## Included
 
 - `home/.zshrc`
 - `home/.zprofile`
 - `home/.skhdrc`
 - `home/.zsh/completions`
+- `macos-defaults.sh`
 - `config/yabai`
 - `config/sketchybar`
 - `config/borders`
