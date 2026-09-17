@@ -74,6 +74,10 @@ shift + ralt - n : yabai -m window --space next && yabai -m space --focus next
 rcmd + ralt - n : "$HOME/.config/yabai/create-space-right.sh"
 rcmd + ralt - r : index=$(yabai -m query --spaces --space | jq -r '.index') && target=$((index > 1 ? index - 1 : 1)) && yabai -m space --destroy && yabai -m space --focus "$target"
 
+# Workspace profiles
+rcmd + ralt + shift - 1 : "$HOME/.config/yabai/workspaces/main-workspace.sh"
+rcmd + ralt + shift - 0 : "$HOME/.config/yabai/workspaces/reset-workspace.sh"
+
 # OPEN APPS
 ralt - return : osascript -e 'tell application "Ghostty" to «event GhstNWin»' || open -a Ghostty
 ralt + shift - return : open -na Ghostty --args -e zsh -ic n

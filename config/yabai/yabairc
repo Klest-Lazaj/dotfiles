@@ -19,9 +19,18 @@ yabai -m config right_padding 10
 yabai -m config window_gap 15
 
 # Mouse support
+# Hold fn while dragging with a mouse button to trigger yabai mouse actions
 yabai -m config mouse_modifier fn
+# Move windows by holding fn and dragging with mouse button 1
 yabai -m config mouse_action1 move
+# Resize windows by holding fn and dragging with mouse button 2
 yabai -m config mouse_action2 resize
+# Focus windows when hovering over them, without bringing them to the front
+yabai -m config focus_follows_mouse autofocus
+# Keep the cursor where it is when focus changes from keyboard commands
+yabai -m config mouse_follows_focus off
+# Swap tiled windows when dragging one onto another
+yabai -m config mouse_drop_action swap
 
 # Opacity — only used to enable the feature, no global dimming
 yabai -m config window_opacity on
@@ -35,7 +44,7 @@ yabai -m rule --add app=".*" manage=off
 yabai -m rule --add app="^Code$" manage=on
 yabai -m rule --add app="^Ghostty$" manage=on
 yabai -m rule --add app="^Zed$" manage=on
-yabai -m rule --add app="^(Terminal|Finder|IntelliJ IDEA|WhatsApp|Slack|Telegram|Arc|Zen|Google|Safari|Firefox)$" manage=on
+yabai -m rule --add app="^(Terminal|Finder|IntelliJ IDEA|.*WhatsApp.*|Slack|Telegram|Arc|Zen|Google|Safari|Firefox)$" manage=on
 
 # Keep Code, Zed, Ghostty, IntelliJ IDEA, and Finder transparent at all times regardless of focus
 yabai -m signal --remove code_ghostty_zed_opacity_focused 2>/dev/null
