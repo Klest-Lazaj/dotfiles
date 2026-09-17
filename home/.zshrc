@@ -48,6 +48,7 @@ eval "$(starship init zsh)"
 # Git
 alias gs="git status"
 alias gca="git commit -a -m"
+alias gcm="git commit -m"
 alias gpu="git push"
 alias gf="git fetch && git pull"
 alias gb="git checkout -b"
