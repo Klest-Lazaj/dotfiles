@@ -8,7 +8,7 @@ yabai -m config layout bsp
 yabai -m config window_placement second_child
 yabai -m config auto_balance off
 
-# Performance
+# Disable yabai geometry animations; fullscreen uses its own opacity fade helper.
 yabai -m config window_animation_duration 0.0
 
 # Gaps & padding
@@ -26,7 +26,7 @@ yabai -m config mouse_action1 move
 # Resize windows by holding fn and dragging with mouse button 2
 yabai -m config mouse_action2 resize
 # Focus windows when hovering over them, without bringing them to the front
-yabai -m config focus_follows_mouse autofocus
+# yabai -m config focus_follows_mouse autofocus
 # Keep the cursor where it is when focus changes from keyboard commands
 yabai -m config mouse_follows_focus off
 # Swap tiled windows when dragging one onto another
@@ -50,6 +50,7 @@ yabai -m rule --add app="^(Terminal|Finder|IntelliJ IDEA|.*WhatsApp.*|Slack|Tele
 yabai -m signal --remove code_ghostty_zed_opacity_focused 2>/dev/null
 yabai -m signal --remove code_ghostty_zed_opacity_created 2>/dev/null
 yabai -m signal --remove reset_non_dev_opacity_focused 2>/dev/null
+yabai -m signal --remove restore_zoom_opacity_on_destroy 2>/dev/null
 yabai -m signal --add event=window_focused label=code_ghostty_zed_opacity_focused app="^(Code|Ghostty|Zed|IntelliJ IDEA|Finder)$" action='
   yabai -m window $YABAI_WINDOW_ID --opacity 0.9
 '
@@ -59,5 +60,7 @@ yabai -m signal --add event=window_created label=code_ghostty_zed_opacity_create
 yabai -m signal --add event=window_focused label=reset_non_dev_opacity_focused app!="^(Code|Ghostty|Zed|IntelliJ IDEA|Finder)$" action='
   yabai -m window $YABAI_WINDOW_ID --opacity 0.0
 '
+# Restore windows hidden by fullscreen zoom if that fullscreen window is closed.
+yabai -m signal --add event=window_destroyed label=restore_zoom_opacity_on_destroy action='"$HOME/.config/yabai/toggle-zoom-fullscreen.sh" --restore-hidden-windows'
 
 echo "yabai loaded"

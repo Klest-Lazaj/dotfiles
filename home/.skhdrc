@@ -10,14 +10,15 @@ ralt - d : yabai -m window --swap east
 ralt - w    : yabai -m window --swap north
 ralt - s  : yabai -m window --swap south
 
-# RESIZE WINDOWS 
+# RESIZE WINDOWS
 ralt + shift - a : yabai -m window --resize left:-50:0
 ralt + shift - d : yabai -m window --resize right:50:0
 ralt + shift - w : yabai -m window --resize top:0:-50
 ralt + shift - s : yabai -m window --resize bottom:0:50
 
 # LAYOUT CONTROL
-ralt - f : yabai -m window --toggle zoom-fullscreen
+# Zoom in place while fading windows behind transparent apps; press again to restore.
+ralt - f : "$HOME/.config/yabai/toggle-zoom-fullscreen.sh"
 ralt - t : yabai -m window --toggle float
 ralt - q : yabai -m window --close
 ralt - c : yabai -m window --grid 4:4:1:1:2:2  # center float (rough center)
@@ -87,7 +88,7 @@ ralt - b : osascript -e 'tell application "Finder" to make new Finder window' -e
 
 # Switch desktops (default macOs shortcuts  for Mission Control)
 ctrl - left : yabai -m space --focus prev
-ctrl - right : yabai -m space --focus next  
+ctrl - right : yabai -m space --focus next
 
 # Alt tabbing — loops through all windows, wraps around
 ralt - tab : yabai -m window --focus next || yabai -m window --focus first

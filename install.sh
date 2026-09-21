@@ -107,6 +107,7 @@ link_dotfiles() {
   backup_and_link "$DOTFILES_DIR/config/borders" "$HOME/.config/borders"
   backup_and_link "$DOTFILES_DIR/config/ghostty" "$HOME/.config/ghostty"
   backup_and_link "$DOTFILES_DIR/config/btop" "$HOME/.config/btop"
+  backup_and_link "$DOTFILES_DIR/config/neofetch" "$HOME/.config/neofetch"
   backup_and_link "$DOTFILES_DIR/config/starship.toml" "$HOME/.config/starship.toml"
 }
 

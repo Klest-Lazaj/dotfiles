@@ -1,6 +1,6 @@
 # --- PATH ---
 export PATH=$HOME/bin:$HOME/.local/bin:/usr/local/bin:$PATH
-export PATH="/Users/klestlazaj/mongodb-macos-aarch64-8.0.0/bin:$PATH"
+export PATH="$HOME/mongodb-macos-aarch64-8.0.0/bin:$PATH"
 PATH=~/.console-ninja/.bin:$PATH
 
 # --- ZINIT ---
@@ -113,7 +113,7 @@ n () {
 }
 
 # --- PNPM ---
-export PNPM_HOME="/Users/klestlazaj/Library/pnpm"
+export PNPM_HOME="$HOME/Library/pnpm"
 case ":$PATH:" in
   *":$PNPM_HOME:"*) ;;
   *) export PATH="$PNPM_HOME:$PATH" ;;
@@ -125,7 +125,7 @@ if [ -e '/nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh' ]; then
 fi
 
 # --- BUN ---
-[ -s "/Users/klestlazaj/.bun/_bun" ] && source "/Users/klestlazaj/.bun/_bun"
+[ -s "$HOME/.bun/_bun" ] && source "$HOME/.bun/_bun"
 export BUN_INSTALL="$HOME/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
 

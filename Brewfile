@@ -1,6 +1,6 @@
 tap "felixkratz/formulae"
 tap "homebrew/services"
-tap "koekeishiya/formulae"
+tap "asmvik/formulae"
 tap "mongodb/brew"
 tap "nikitabobko/tap"
 tap "stripe/stripe-cli"

@@ -11,7 +11,7 @@ cpu_percent=(
   padding_right=8
   update_freq=10
   mach_helper="$HELPER"
-  click_script="open -na Ghostty --args -e btop; sleep 0.2 && yabai -m window --focus \"\$(yabai -m query --windows | jq '[.[] | select(.app==\"Ghostty\")] | sort_by(.id) | last | .id')\" && yabai -m window --toggle zoom-fullscreen"
+  click_script="open -na Ghostty --args -e btop; sleep 0.2 && yabai -m window --focus \"\$(yabai -m query --windows | jq '[.[] | select(.app==\"Ghostty\")] | sort_by(.id) | last | .id')\" && \"$HOME/.config/yabai/toggle-zoom-fullscreen.sh\""
 )
 
 sketchybar --add item cpu.percent right          \
