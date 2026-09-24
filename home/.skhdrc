@@ -17,8 +17,8 @@ ralt + shift - w : yabai -m window --resize top:0:-50
 ralt + shift - s : yabai -m window --resize bottom:0:50
 
 # LAYOUT CONTROL
-# Zoom in place while fading windows behind transparent apps; press again to restore.
-ralt - f : "$HOME/.config/yabai/toggle-zoom-fullscreen.sh"
+# Toggle zoom fullscreen.
+ralt - f : yabai -m window --toggle zoom-fullscreen
 ralt - t : yabai -m window --toggle float
 ralt - q : yabai -m window --close
 ralt - c : yabai -m window --grid 4:4:1:1:2:2  # center float (rough center)

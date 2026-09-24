@@ -10,7 +10,7 @@ mem=(
   padding_right=8
   update_freq=10
   script="$PLUGIN_DIR/memory.sh"
-  click_script="open -na Ghostty --args -e btop; sleep 0.2 && yabai -m window --focus \"\$(yabai -m query --windows | jq '[.[] | select(.app==\"Ghostty\")] | sort_by(.id) | last | .id')\" && \"$HOME/.config/yabai/toggle-zoom-fullscreen.sh\""
+  click_script="open -na Ghostty --args -e btop; sleep 0.2 && yabai -m window --focus \"\$(yabai -m query --windows | jq '[.[] | select(.app==\"Ghostty\")] | sort_by(.id) | last | .id')\" && yabai -m window --toggle zoom-fullscreen"
 )
 
 sketchybar --add item mem right \
