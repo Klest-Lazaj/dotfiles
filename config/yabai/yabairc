@@ -44,19 +44,20 @@ yabai -m rule --add app=".*" manage=off
 yabai -m rule --add app="^Code$" manage=on
 yabai -m rule --add app="^Ghostty$" manage=on
 yabai -m rule --add app="^Zed$" manage=on
+yabai -m rule --add app="^ChatGPT$" manage=on
 yabai -m rule --add app="^(Terminal|Finder|IntelliJ IDEA|.*WhatsApp.*|Slack|Telegram|Arc|Zen|Google|Safari|Firefox)$" manage=on
 
-# Keep Code, Zed, Ghostty, IntelliJ IDEA, and Finder transparent at all times regardless of focus
+# Keep Code, Zed, Ghostty, IntelliJ IDEA, Finder, and ChatGPT transparent at all times regardless of focus
 yabai -m signal --remove code_ghostty_zed_opacity_focused 2>/dev/null
 yabai -m signal --remove code_ghostty_zed_opacity_created 2>/dev/null
 yabai -m signal --remove reset_non_dev_opacity_focused 2>/dev/null
-yabai -m signal --add event=window_focused label=code_ghostty_zed_opacity_focused app="^(Code|Ghostty|Zed|IntelliJ IDEA|Finder)$" action='
+yabai -m signal --add event=window_focused label=code_ghostty_zed_opacity_focused app="^(Code|Ghostty|Zed|IntelliJ IDEA|Finder|ChatGPT)$" action='
   yabai -m window $YABAI_WINDOW_ID --opacity 0.9
 '
-yabai -m signal --add event=window_created label=code_ghostty_zed_opacity_created app="^(Code|Ghostty|Zed|IntelliJ IDEA|Finder)$" action='
+yabai -m signal --add event=window_created label=code_ghostty_zed_opacity_created app="^(Code|Ghostty|Zed|IntelliJ IDEA|Finder|ChatGPT)$" action='
   yabai -m window $YABAI_WINDOW_ID --opacity 0.9
 '
-yabai -m signal --add event=window_focused label=reset_non_dev_opacity_focused app!="^(Code|Ghostty|Zed|IntelliJ IDEA|Finder)$" action='
+yabai -m signal --add event=window_focused label=reset_non_dev_opacity_focused app!="^(Code|Ghostty|Zed|IntelliJ IDEA|Finder|ChatGPT)$" action='
   yabai -m window $YABAI_WINDOW_ID --opacity 0.0
 '
 
