@@ -86,9 +86,9 @@ ralt - z : zed -n
 ralt - v : code -n
 ralt - b : osascript -e 'tell application "Finder" to make new Finder window' -e 'tell application "Finder" to activate'
 
-# Switch desktops (default macOs shortcuts  for Mission Control)
-ctrl - left : yabai -m space --focus prev
-ctrl - right : yabai -m space --focus next
+# Switch Spaces only within the focused display; stop at either end.
+ctrl - left : "$HOME/.config/yabai/focus-space-on-display.sh" prev
+ctrl - right : "$HOME/.config/yabai/focus-space-on-display.sh" next
 
 # Alt tabbing — loops through all windows, wraps around
 ralt - tab : yabai -m window --focus next || yabai -m window --focus first
