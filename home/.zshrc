@@ -131,17 +131,17 @@ export PATH="$BUN_INSTALL/bin:$PATH"
 
 # --- NVM (lazy) ---
 export NVM_DIR="$HOME/.nvm"
-_load_nvm() {
+lazy_nvm() {
   unset -f nvm node npm npx yarn pnpm
   [ -s "$NVM_DIR/nvm.sh" ] && source "$NVM_DIR/nvm.sh"
   [ -s "$NVM_DIR/bash_completion" ] && source "$NVM_DIR/bash_completion"
 }
-nvm()  { _load_nvm; nvm "$@" }
-node() { _load_nvm; node "$@" }
-npm()  { _load_nvm; npm "$@" }
-npx()  { _load_nvm; npx "$@" }
-yarn() { _load_nvm; yarn "$@" }
-pnpm() { _load_nvm; pnpm "$@" }
+nvm()  { lazy_nvm; nvm "$@" }
+node() { lazy_nvm; node "$@" }
+npm()  { lazy_nvm; npm "$@" }
+npx()  { lazy_nvm; npx "$@" }
+yarn() { lazy_nvm; yarn "$@" }
+pnpm() { lazy_nvm; pnpm "$@" }
 
 # --- DIRENV ---
 eval "$(direnv hook zsh)"
