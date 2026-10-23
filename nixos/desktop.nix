@@ -3,6 +3,12 @@
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
   nixpkgs.config.allowUnfree = true; # vscode
 
+  # HP 255 G10's Realtek RTL8852BE Wi-Fi hard-freezes without these (ArchWiki: HP_255_G10).
+  boot.kernelParams = [
+    "rtw89_pci.disable_aspm_l1=1"
+    "rtw89_pci.disable_aspm_l1ss=1"
+  ];
+
   programs.hyprland.enable = true;
   services.displayManager.sddm = {
     enable = true;
