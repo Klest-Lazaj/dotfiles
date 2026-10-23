@@ -23,13 +23,19 @@ backup_and_link() {
 }
 
 backup_and_link "$DOTFILES_DIR/home/.zshrc" "$HOME/.zshrc"
-backup_and_link "$DOTFILES_DIR/home/.zprofile" "$HOME/.zprofile"
-backup_and_link "$DOTFILES_DIR/home/.skhdrc" "$HOME/.skhdrc"
 backup_and_link "$DOTFILES_DIR/home/.zsh/completions" "$HOME/.zsh/completions"
 
-backup_and_link "$DOTFILES_DIR/config/yabai" "$HOME/.config/yabai"
-backup_and_link "$DOTFILES_DIR/config/sketchybar" "$HOME/.config/sketchybar"
-backup_and_link "$DOTFILES_DIR/config/borders" "$HOME/.config/borders"
+if [ "$(uname)" = Darwin ]; then
+  backup_and_link "$DOTFILES_DIR/home/.zprofile" "$HOME/.zprofile"
+  backup_and_link "$DOTFILES_DIR/home/.skhdrc" "$HOME/.skhdrc"
+  backup_and_link "$DOTFILES_DIR/config/yabai" "$HOME/.config/yabai"
+  backup_and_link "$DOTFILES_DIR/config/sketchybar" "$HOME/.config/sketchybar"
+  backup_and_link "$DOTFILES_DIR/config/borders" "$HOME/.config/borders"
+else
+  backup_and_link "$DOTFILES_DIR/config/hypr" "$HOME/.config/hypr"
+  backup_and_link "$DOTFILES_DIR/config/waybar" "$HOME/.config/waybar"
+fi
+
 backup_and_link "$DOTFILES_DIR/config/ghostty" "$HOME/.config/ghostty"
 backup_and_link "$DOTFILES_DIR/config/btop" "$HOME/.config/btop"
 backup_and_link "$DOTFILES_DIR/config/neofetch" "$HOME/.config/neofetch"
