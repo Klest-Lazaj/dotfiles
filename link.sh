@@ -36,6 +36,9 @@ else
   backup_and_link "$DOTFILES_DIR/config/waybar" "$HOME/.config/waybar"
 fi
 
+backup_and_link "$DOTFILES_DIR/claude/CLAUDE.md" "$HOME/.claude/CLAUDE.md"
+backup_and_link "$DOTFILES_DIR/claude/skills/codebase-standard" "$HOME/.claude/skills/codebase-standard"
+
 backup_and_link "$DOTFILES_DIR/config/ghostty" "$HOME/.config/ghostty"
 backup_and_link "$DOTFILES_DIR/config/btop" "$HOME/.config/btop"
 backup_and_link "$DOTFILES_DIR/config/neofetch" "$HOME/.config/neofetch"

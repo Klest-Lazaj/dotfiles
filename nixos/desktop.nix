@@ -14,6 +14,8 @@
     enable = true;
     wayland.enable = true;
   };
+  # Hyprland also ships a "uwsm-managed" session, which can't start without uwsm installed.
+  services.displayManager.defaultSession = "hyprland";
 
   security.rtkit.enable = true;
   services.pipewire = {
